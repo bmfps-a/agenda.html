@@ -40,6 +40,9 @@ while True :
                 break
             elif confirmacao_de_compra == 's' or confirmacao_de_compra == 'S':
                 
+                if estoque_refri <= 0:
+                    print("Não há Refrigerantes no estoque, por favor reponha o estoque.")
+                    break
                 nota10_inserida = int(input("Insira a quantidade de notas de 10: "))
                 nota10_maquina += nota10_inserida
 
@@ -240,7 +243,7 @@ while True :
                                     break
                         elif resposta_estoque == 2:
                             retiro_estoque = int(input('quantos refrigerantes você deseja retirar do estoque(máximo 20 por vez):'))
-                            while adicao_estoque <= 0 or adicao_estoque > 20:
+                            while retiro_estoque < 0 or retiro_estoque > 20:
                                 print('quantidade não permitida')
                                 retiro_estoque = int(input('quantos refrigerantes você deseja retirar do estoque(máximo 20 por vez):'))
                             if retiro_estoque > 0 and retiro_estoque <= 20:
