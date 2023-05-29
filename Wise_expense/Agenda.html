@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda</title>
+<style> 
+
+        .title {background-color: rgb(203, 133, 97);color: aliceblue }
+        .painel_calendario { background-color: rgb(221, 201, 190);}
+        .box_unwritten1{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -15px;}
+        .box_unwritten2{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top:-800px; left: 135px;}
+        .box_unwritten3{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top:-1563px; left: 270px;}
+        .box_unwritten4{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top: -2886px; left: 405px;}
+        .box_unwritten5{background-color: aliceblue; width: 125px ; height: 125px; border: 0; position: relative; top: -4798px; left: 880px;}
+
+        .box_day1{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3133px; left: 610px;}
+        .box_day2{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3940px; left: 745px;}
+        .box_day3{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -4747px; left: 880px;}
+        .box_day4{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -28px;}
+        .box_day5{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -813px ; left: 135px ; }
+        .box_day6{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -2017px; left: 340px;}
+        .box_day7{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -2164px; left: 475px;}
+        .box_day8{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3146px; left:610px;}
+        .box_day9{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3953px; left: 745px;}
+        .box_day10{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -4760px; left: 880px;}
+
+        .box_day11{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -41px; }
+        .box_day12{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; left: 205px; top: -826px; }
+        .box_day13{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; left: 340px; top: -1736px; }
+        .box_day14{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -2177px; left: 475px;}
+        .box_day15{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3159px; left: 610px;}
+        .box_day16{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3966px; left: 745px;}
+        .box_day17{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -4773px; left: 880px;}
+        .box_day18{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -54px;}
+        .box_day19{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; left: 205px; top: -839px; }
+        .box_day20{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; left: 340px; top: -1455px;}
+
+        .box_day21{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -2190px; left: 475px;}
+        .box_day22{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3172px; left: 610px;}
+        .box_day23{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -4125px; left: 745px;}
+        .box_day24{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -4785px; left: 880px;}
+        .box_day25{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -67px; }
+        .box_day26{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -852px; left: 205px;}
+        .box_day27{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; left: 340px; top: -1174px;}
+        .box_day28{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -2203px; left: 475px;}
+        .box_day29{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3185px; left: 610px;}
+        .box_day30{background-color: aliceblue; width: 125px;height: 125px; border: 0; position: relative; top: -3844px; left: 745px;}
+        
+        .day_dom {background-color: rgb(52, 72,96); width: 125px; height:30px; margin-left: 70px;border: 0;}
+        .day_seg {background-color: rgb(52, 72,96); width: 125px; height:30px; margin-left: 70px;border: 0; position: relative; left: 135px; top: -785px;}
+        .day_ter{background-color: rgb(52, 72,96); width: 125px; height:30px; border: 0; position: relative; left: 340px; top: -1570px;}
+        .day_qua{background-color: rgb(52, 72,96); width: 125px; height:30px; border: 0; position: relative; left: 475px; top: -3068px;}
+        .day_qui{background-color: rgb(52, 72,96); width: 125px; height:30px; border: 0; position: relative; left: 610px; top: -3140px;}
+        .day_sex{background-color: rgb(52, 72,96); width: 125px; height:30px; border: 0; position: relative; left: 745px; top: -3924px;}
+        .day_sab{background-color: rgb(52, 72,96); width: 125px; height:30px; border: 0; position: relative; left: 880px; top: -4731px;}
+
+        .color_days{color: aliceblue;}
+        .color_months { color: rgb(52, 72, 96 ); border:0}
+        div {text-align: center; border:solid 1px}
+        body {font-family: 'Nunito', sans-serif; }
+        table td,table tr{width: 300px; height: 200px; border:0}
+        
+</style>
+    
+</head>
+<body>
+        <div>
+            <div class="title">
+                <h1 >Agenda</h1>
+            </div>
+                <div class="painel_calendario">
+                    <h2 class="color_months">Junho</h2>   
+                
+                <div class="color_months">
+                        <div class="calendar_box day_dom">
+                            <h2 class="color_days">DOM</h2>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_unwritten1"></div>
+                    <br>
+                        <div class="calendar_box box_day4">
+                            <span>04</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day11">
+                            <span>11</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day18">
+                            <span>18</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day25">
+                            <span>25</span>
+                        </div>
+                        <div class="calendar_box day_seg">
+                            <h2 class="color_days">SEG</h2>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_unwritten2"></div>
+                    <br>
+                        <div class="calendar_box box_day5">
+                            <span>5</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day12">
+                            <span>12</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day19">
+                            <span>19</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day26">
+                            <span>26</span>
+                        </div>
+                        <div class="calendar_box day_ter">
+                            <h2 class="color_days">TER</h2>
+                        </div>
+                        <div class="calendar_box box_unwritten3"></div>
+                    <br>
+                        <div class="calendar_box box_day27">
+                            <span>27</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day20">
+                            <span>20</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day13">
+                            <span>13</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day6">
+                            <span>6</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day7">
+                            <span>7</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day14">
+                            <span>14</span>
+                    </div>
+                        <br>
+                    <div class="calendar_box box_day21">
+                            <span>21</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day28">
+                            <span>28</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_unwritten4"></div>
+                
+                        <div class="calendar_box day_qua">
+                            <h2 class="color_days">QUA</h2>
+                        </div>
+                    <br>
+                        <div class="calendar_box day_qui">
+                            <h2 class="color_days">QUI</h2>
+                        </div>
+                        <div class="calendar_box box_day1">
+                            <span>1</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day8">
+                            <span>8</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day15">
+                            <span>15</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day22">
+                            <span>22</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day29">
+                            <span>29</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box day_sex">
+                            <h2 class="color_days">SEX</h2>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day2">
+                            <span>2</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day9">
+                            <span>9</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day16">
+                            <span>16</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day30">
+                            <span>30</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day23">
+                            <span>23</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box day_sab">
+                            <h2 class="color_days">SAB</h2>
+                        </div>
+                        
+                    <br>
+                        <div class="calendar_box box_day3">
+                            <span>3</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day10">
+                            <span>10</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_day17">
+                            <span>17</span>
+                        </div>
+                    <br>    
+                        <div class="calendar_box box_day24">
+                            <span>24</span>
+                        </div>
+                    <br>
+                        <div class="calendar_box box_unwritten5"></div>
+                        
+                 </div>
+
+                <div>
+                    <table class="notes"> 
+                        <tr>
+                            <td>
+                                <p>Data:</p>
+                                    <input type="date">
+                            </td>
+                            <td>
+                                <p>Digite a Anotação:</p>
+                                    <input type="text">
+                            </td>
+                        </tr>
+                        
+                    </table>
+                </div>
+            
+    </div>
+
+    
+
+    
+</body>
+</html>
