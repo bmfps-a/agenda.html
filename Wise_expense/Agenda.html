@@ -10,7 +10,7 @@
     <title>Agenda</title>
 <style> 
 
-        .title {background-color: rgb(203, 133, 97);color: aliceblue }
+        .title {background-color: rgb(203, 133, 97);color: aliceblue; ; }
         .painel_calendario { background-color: rgb(227, 219, 208);}
         .box_unwritten1{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -15px;}
         .box_unwritten2{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top:-800px; left: 135px;}
@@ -63,16 +63,18 @@
         .color_months { color: rgb(52, 72, 96 ); border:0}
         .title, .painel_calendario{text-align: center; border:solid 1px}
         body {font-family: 'Nunito', sans-serif; }
-        .date{width: 300px; height: 200px; border:solid 1 black; position: relative; top: -5000px; left: 100px;}
-        .text{width: 300px; height: 200px; border:solid 0; position: relative; top: -4724px; left: 400px;}
-        
+        .type_date{background-color: rgb(217, 217, 217 ); color: rgb(11, 11, 11);position: relative; top: -15px;}
+        .type_text{background-color: rgb(217, 217, 217 ); color: rgb(4, 4, 4);position: relative; top: -15px;}
+        .table_input{border: 1px solid black; border-collapse: collapse; position: relative; top: -4700px; background-color: rgb(221, 201, 190);}
+        .seta{position:relative; left: -500px;}
+        th, td{border: 1px solid black}
 </style>
     
 </head>
 <body>
         <div>
-            <div class="title">
-                <h1 >Agenda</h1>
+            <div class="title" >
+                <h1><img class="seta" src="Imagens/seta.png">Agenda</h1>
             </div>
                 <div class="painel_calendario">
                     <h2 class="color_months">Junho</h2>   
@@ -234,21 +236,19 @@
                         <div class="calendar_box box_unwritten5"></div>
                         
                  </div>
-                 <div>
-                    <table class="date"> 
-                        <tr>
-                            <td>
-                                <p>Data:</p>
-                                    <input type="date">
-                            </td>
-                            <div class=" text">
-                                <p>Digite a Anotação:</p>
-                                    <input type="text">
-                            </div>
-                        </tr>
-                        
-                    </table>
-                </div>
+                <table class="table_input" style="width: 100%; border: 1px solid black;">
+                       <tr style="position: relative; left: 0%;">
+                                <th>         
+                                        <p >Data:</p>
+                                            <input type="date" class="type_date" >       
+                                </th>
+                                <th >                                  
+                                        <p >Digite a Anotação:</p>
+                                            <input type="text" class="type_text" >                                                                  
+                                </th>
+                       </tr>
+                            
+                </table>
             
              
     </div>
