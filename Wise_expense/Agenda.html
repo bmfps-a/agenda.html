@@ -11,7 +11,7 @@
 <style> 
 
         .title {background-color: rgb(203, 133, 97);color: aliceblue }
-        .painel_calendario { background-color: rgb(221, 201, 190);}
+        .painel_calendario { background-color: rgb(227, 219, 208);}
         .box_unwritten1{background-color: aliceblue; width: 125px;height: 125px; margin-left:70px; border: 0; position: relative; top: -15px;}
         .box_unwritten2{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top:-800px; left: 135px;}
         .box_unwritten3{background-color: aliceblue; width: 125px ; height: 125px; margin-left: 70px; border: 0; position: relative; top:-1563px; left: 270px;}
@@ -61,9 +61,10 @@
 
         .color_days{color: aliceblue;}
         .color_months { color: rgb(52, 72, 96 ); border:0}
-        div {text-align: center; border:solid 1px}
+        .title, .painel_calendario{text-align: center; border:solid 1px}
         body {font-family: 'Nunito', sans-serif; }
-        table td,table tr{width: 300px; height: 200px; border:0}
+        .date{width: 300px; height: 200px; border:solid 1 black; position: relative; top: -5000px; left: 100px;}
+        .text{width: 300px; height: 200px; border:solid 0; position: relative; top: -4724px; left: 400px;}
         
 </style>
     
@@ -233,23 +234,23 @@
                         <div class="calendar_box box_unwritten5"></div>
                         
                  </div>
-
-                <div>
-                    <table class="notes"> 
+                 <div>
+                    <table class="date"> 
                         <tr>
                             <td>
                                 <p>Data:</p>
                                     <input type="date">
                             </td>
-                            <td>
+                            <div class=" text">
                                 <p>Digite a Anotação:</p>
                                     <input type="text">
-                            </td>
+                            </div>
                         </tr>
                         
                     </table>
                 </div>
             
+             
     </div>
 
     
