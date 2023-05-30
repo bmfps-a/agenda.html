@@ -13,12 +13,14 @@ moeda1real_maquina = 5
 moeda25c_maquina = 5
 moeda5c_maquina = 5
 
-def troco_total(troco_notas,troco,nota_maquina,dinheiro_maquina_inserido):
+valores_cedula_moeda = [10,5,2,1,0.25,0.05]
+#função para calcular o troco
+def calcular_troco(troco_notas,troco,nota_maquina,dinheiro_maquina_inserido,valor_monetario):
     if troco_notas > nota_maquina:
         troco_notas = nota_maquina
-    nota_maquina = nota_maquina -  troco_notas
-    troco = troco - (troco_notas * 10)
-    dinheiro_maquina_inserido = dinheiro_maquina_inserido - troco
+    nota_maquina -=  troco_notas
+    troco = troco - (troco_notas * valor_monetario)
+    dinheiro_maquina_inserido -= troco
 
 dinheiro_maquina_inserido = (nota10_maquina * 10) + (nota5_maquina * 5) + (nota2_maquina * 2)  + moeda1real_maquina +  + (moeda25c_maquina * 0.25) + (moeda5c_maquina * 0.05)
 
@@ -43,6 +45,9 @@ while True :
                 if estoque_refri <= 0:
                     print("Não há Refrigerantes no estoque, por favor reponha o estoque.")
                     break
+                quant_refri = int(input('Digite quantas latas de refri você gostaria de comprar :'))
+                estoque_refri -= quant_refri
+
                 nota10_inserida = int(input("Insira a quantidade de notas de 10: "))
                 nota10_maquina += nota10_inserida
 
@@ -53,7 +58,7 @@ while True :
                 nota2_maquina += nota2_inserida
 
                 moeda1real_inserida = int(input("Insira a quantidade de moedas de 1 real: "))
-                moeda1real_maquina += moeda1real_maquina
+                moeda1real_maquina += moeda1real_inserida
 
                 moeda25c_inserida = int(input("Insira a quantidade de moedas de 25 centavos: "))
                 moeda25c_maquina += moeda25c_inserida
@@ -62,52 +67,50 @@ while True :
                 moeda5c_maquina += moeda5c_inserida
 
                 dinheiro_do_cliente = (nota10_inserida * 10) + (nota5_inserida * 5) + (nota2_inserida * 2)  + moeda1real_inserida + (moeda25c_inserida * 0.25) + (moeda5c_inserida * 0.05)
-            if dinheiro_do_cliente < precoRefri:
-                print("Compra invalida, insira uma quantidade maior que 5 reais ")
-                print(f"devolvendo dinheiro inserido : ")
+                if dinheiro_do_cliente < precoRefri:
+                    print("Compra invalida, insira uma quantidade maior que 5 reais ")
+                    print(f"devolvendo dinheiro inserido :{dinheiro_do_cliente} ")
                 
+                troco = dinheiro_do_cliente - (precoRefri * quant_refri)
+                if troco > 50:
+                    print('ERRO! Quantidade limite ultrapassada!')
+                    break
+                if troco > 0:
+                    print("Compra realizada, aqui está seu troco:", troco)
 
+                    troco_notas_10 = int(troco / 10)
+                    calcular_troco(troco_notas_10,troco,nota10_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[0])
+                    
+                    troco_notas_5 = int(troco / 5)
+                    calcular_troco(troco_notas_5,troco,nota5_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[1])
+                    
 
-            troco = dinheiro_do_cliente - precoRefri
-            if troco > 50:
-                print('ERRO! Quantidade limite ultrapassada!')
-                break
-            if troco > 0:
-                print("Compra realizada, aqui está seu troco:", troco)
+                    troco_notas_2 = int(troco / 2)
+                    calcular_troco(troco_notas_2,troco,nota2_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[2])
+                    
+                    troco_moedas_1 = int(troco / 1)
+                    calcular_troco(troco_moedas_1,troco,moeda1real_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[3])
 
-                troco_notas_10 = int(troco / 10)
-                troco_total(troco_notas_10,troco,nota10_maquina,dinheiro_maquina_inserido)
-                
-                troco_notas_5 = int(troco / 10)
-                troco_total(troco_notas_5,troco,nota5_maquina,dinheiro_maquina_inserido)
-                
+                    
+                    troco_moedas_25 = int(troco / 0.25)
+                    calcular_troco(troco_moedas_25,troco,moeda25c_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[4])
 
-                troco_notas_2 = int(troco / 10)
-                troco_total(troco_notas_2,troco,nota2_maquina,dinheiro_maquina_inserido)
-                
-                troco_moedas_1 = int(troco / 10)
-                troco_total(troco_moedas_1,troco,moeda1real_maquina,dinheiro_maquina_inserido)
+                    
+                    troco_moedas_5 = int(troco / 0.05)
+                    calcular_troco(troco_moedas_5,troco,moeda5c_maquina,dinheiro_maquina_inserido,valores_cedula_moeda[5])
 
-                
-                troco_moedas_25 = int(troco / 10)
-                troco_total(troco_moedas_25,troco,moeda25c_maquina,dinheiro_maquina_inserido)
-
-                
-                troco_moedas_5 = int(troco / 10)
-                troco_total(troco_moedas_5,troco,moeda5c_maquina,dinheiro_maquina_inserido)
-
-                if troco_notas_10 >= 1:
-                    print("Notas de R$10:", troco_notas_10)
-                if troco_notas_5 >= 1:
-                    print("Notas de R$5:", troco_notas_5)
-                if troco_notas_2 >= 1:
-                    print("Notas de R$2:", troco_notas_2)
-                if troco_moedas_1 >= 1:
-                    print("Moedas de R$1:", troco_moedas_1)
-                if troco_moedas_25 >= 1:
-                    print("Moedas de R$0.25:", troco_moedas_25)
-                if troco_moedas_5 >= 1:
-                    print("Moedas de R$0.05:", troco_moedas_5)
+                    if troco_notas_10 >= 1:
+                        print("Notas de R$10:", troco_notas_10)
+                    if troco_notas_5 >= 1:
+                        print("Notas de R$5:", troco_notas_5)
+                    if troco_notas_2 >= 1:
+                        print("Notas de R$2:", troco_notas_2)
+                    if troco_moedas_1 >= 1:
+                        print("Moedas de R$1:", troco_moedas_1)
+                    if troco_moedas_25 >= 1:
+                        print("Moedas de R$0.25:", troco_moedas_25)
+                    if troco_moedas_5 >= 1:
+                        print("Moedas de R$0.05:", troco_moedas_5)
             else:
                 (" Compra realizada com sucesso! ")
         
